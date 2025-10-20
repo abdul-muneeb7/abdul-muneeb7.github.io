@@ -10,40 +10,26 @@
 /* Reset & fonts */
 * { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; transition: background 0.3s, color 0.3s; }
 body { background: #f5f7fa; color: #333; line-height:1.6; }
-
-/* Dark mode */
 body.dark { background: #1f2028; color: #ddd; }
-
-/* Header */
 header { background: #0a74da; color:white; padding:40px 20px; text-align:center; position:relative; }
 header img { width:150px; height:150px; border-radius:50%; border:4px solid white; margin-bottom:20px; }
 header h1 { font-size:2.5rem; margin-bottom:10px; }
 header h3 { font-weight:400; margin-bottom:10px; }
 nav a { color:#fff; text-decoration:none; margin:0 10px; font-weight:500; transition:0.3s; }
 nav a:hover { text-decoration:underline; }
-
-/* Dark mode toggle */
 #themeToggle { position:absolute; top:20px; right:20px; cursor:pointer; font-size:1.5rem; color:white; }
-
-/* Section styling */
 section { padding:60px 20px; max-width:1000px; margin:auto; }
 h2 { color:#0a74da; margin-bottom:20px; border-bottom:2px solid #0a74da; display:inline-block; padding-bottom:5px; }
 body.dark h2 { border-color:#ffb400; color:#ffb400; }
-
-/* Cards */
 .card { background:white; border-radius:10px; padding:20px; margin-bottom:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s; }
 .card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.2); }
 body.dark .card { background:#2b2c38; box-shadow:0 4px 10px rgba(0,0,0,0.3); }
-
-/* Skills bars */
 .skill { margin-bottom:10px; }
 .skill-name { font-weight:500; display:flex; align-items:center; gap:8px; }
 .skill-bar { background:#ddd; border-radius:5px; overflow:hidden; margin-top:5px; }
 .skill-bar-inner { height:10px; background:#0a74da; width:0; transition: width 1.5s ease; }
 body.dark .skill-bar { background:#444; }
 body.dark .skill-bar-inner { background:#ffb400; }
-
-/* Timeline */
 .timeline { position: relative; max-width: 900px; margin: 40px auto; }
 .timeline::after { content:''; position:absolute; width:4px; background:#0a74da; top:0; bottom:0; left:50%; margin-left:-2px; }
 body.dark .timeline::after { background:#ffb400; }
@@ -59,147 +45,30 @@ body.dark .timeline-content { background:#2b2c38; box-shadow:0 4px 10px rgba(0,0
 .timeline-item.right .timeline-content { animation: slideInRight 1s ease forwards; }
 @keyframes slideInLeft { 0%{transform:translateX(-50px); opacity:0;} 100%{transform:translateX(0); opacity:1;} }
 @keyframes slideInRight { 0%{transform:translateX(50px); opacity:0;} 100%{transform:translateX(0); opacity:1;} }
-
-/* Footer */
 footer { text-align:center; padding:20px; background:#0a74da; color:white; }
-
-/* Animations */
 .fade-in { opacity:0; transform:translateY(20px); transition:opacity 1s ease-out, transform 1s ease-out; }
 .fade-in.visible { opacity:1; transform:translateY(0); }
-
-/* Back to top button */
 #backTop { position:fixed; bottom:30px; right:30px; background:#0a74da; color:white; border:none; border-radius:50%; width:50px; height:50px; font-size:1.5rem; cursor:pointer; display:none; z-index:100; }
 body.dark #backTop { background:#ffb400; color:#1f2028; }
-
+a {color:#0a74da;} body.dark a {color:#ffb400;}
 </style>
 </head>
 <body>
-
 <header>
-    <i id="themeToggle" class="fa-solid fa-moon"></i>
-    <img src="profile.jpg" alt="Abdul Muneeb">
-    <h1>Abdul Muneeb</h1>
-    <h3>Digital & ASIC Design Engineer | Neuromorphic Systems</h3>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#publications">Publications</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<i id="themeToggle" class="fa-solid fa-moon"></i>
+<img src="profile.jpg" alt="Abdul Muneeb">
+<h1>Abdul Muneeb</h1>
+<h3>Digital & ASIC Design Engineer | Neuromorphic Systems</h3>
+<nav>
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#publications">Publications</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
-
 <section id="about" class="fade-in">
-    <h2>About Me</h2>
-    <p>Experienced ASIC Design Engineer with strong RTL, verification, and synthesis expertise. Passionate about high-performance digital and neuromorphic systems.</p>
-</section>
-
-<!-- Experience Timeline -->
-<section id="experience" class="fade-in">
-    <h2>Experience</h2>
-    <div class="timeline">
-        <div class="timeline-item left">
-            <div class="timeline-content card">
-                <h3>Senior ASIC Design Engineer</h3>
-                <h4>Nokia | Mar 2025 – Present | Ottawa, Canada</h4>
-                <ul>
-                    <li>Designed low-power DSP components for optical network ASICs.</li>
-                    <li>Performed RTL development and synthesis for power-efficient solutions.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="timeline-item right">
-            <div class="timeline-content card">
-                <h3>Digital Design Engineer</h3>
-                <h4>Neuro-IC Lab, York University | Sep 2022 – Mar 2024 | Toronto, Canada</h4>
-                <ul>
-                    <li>Developed RTL designs for energy-efficient digital processing.</li>
-                    <li>Functional verification, timing closure, pre/post layout validation.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="timeline-item left">
-            <div class="timeline-content card">
-                <h3>Digital Design Engineer</h3>
-                <h4>IC Design Lab, LUMS | Apr 2021 – Sep 2022 | Lahore, Pakistan</h4>
-                <ul>
-                    <li>Designed and verified ASIC IPs for biomedical applications.</li>
-                </ul>
-            </div>
-        </div>
-        <div class="timeline-item right">
-            <div class="timeline-content card">
-                <h3>Associate Design Engineer</h3>
-                <h4>Lampro Mellon | Oct 2019 – May 2021 | Lahore, Pakistan</h4>
-                <ul>
-                    <li>Designed RTL modules for multi-clock domain digital systems.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Education Timeline -->
-<section id="education" class="fade-in">
-    <h2>Education</h2>
-    <div class="timeline">
-        <div class="timeline-item left">
-            <div class="timeline-content card">
-                <h3>M.A.Sc. Electrical & Computer Engineering</h3>
-                <h4>York University | Sep 2022 – Dec 2024</h4>
-                <p>Thesis: Energy-efficiency-optimized convolutional spiking neural networks for seizure detection</p>
-            </div>
-        </div>
-        <div class="timeline-item right">
-            <div class="timeline-content card">
-                <h3>B.Sc. Electronic Engineering</h3>
-                <h4>The Islamia University of Bahawalpur | Sep 2015 – Jun 2019</h4>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Skills -->
-<section id="skills" class="fade-in">
-    <h2>Skills</h2>
-    <div class="skill">
-        <div class="skill-name"><i class="fa-solid fa-microchip"></i> RTL Design</div>
-        <div class="skill-bar"><div class="skill-bar-inner" style="width:90%;"></div></div>
-    </div>
-    <div class="skill">
-        <div class="skill-name"><i class="fa-solid fa-gears"></i> Verification & UVM</div>
-        <div class="skill-bar"><div class="skill-bar-inner" style="width:85%;"></div></div>
-    </div>
-    <div class="skill">
-        <div class="skill-name"><i class="fa-solid fa-laptop-code"></i> Programming (Python/C/RISC-V)</div>
-        <div class="skill-bar"><div class="skill-bar-inner" style="width:80%;"></div></div>
-    </div>
-</section>
-
-<!-- Projects placeholder -->
-<section id="projects" class="fade-in">
-<h2>Projects</h2>
-<p>Coming soon...</p>
-</section>
-
-<!-- Publications placeholder -->
-<section id="publications" class="fade-in">
-<h2>Publications</h2>
-<p>Coming soon...</p>
-</section>
-
-<!-- Contact -->
-<section id="contact" class="fade-in">
-<h2>Contact</h2>
-<p>Email: muneeb.iub@gmail.com | Phone: (+1) 416-617-1578</p>
-<p>LinkedIn: <a href="https://abdul-muneeb.in" target="_blank">abdul-muneeb.in</a></p>
-<p><a href="Abdul_Muneeb_Resume.pdf" download>Download Resume</a></p>
-</section>
-
-<footer>
-    &copy; 2025 Abdul Muneeb
-</footer>
-
-<button id="backTop"><
+<h2>About Me</h2>
+</html>
