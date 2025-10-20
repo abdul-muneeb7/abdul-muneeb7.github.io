@@ -1,137 +1,157 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Abdul Muneeb — Researcher & Engineer</title>
-  <style>
-    :root{--accent:#0b74de;--bg:#0f1720;--card:#0b1220;--muted:#9aa6b2}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6eef6;background:linear-gradient(180deg,#071026 0%,#071827 100%)}
-    .container{max-width:980px;margin:36px auto;padding:28px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.7)}
-    header{display:flex;align-items:center;gap:18px}
-    .avatar{width:110px;height:110px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#3bb78f);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:26px;color:white}
-    h1{margin:0;font-size:28px}
-    h2{margin:10px 0 6px;color:var(--accent)}
-    p.lead{color:var(--muted);margin-top:6px}
-    nav{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
-    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;background:transparent}
-    section{margin-top:28px;padding:18px;background:rgba(255,255,255,0.01);border-radius:10px}
-    .two-col{display:grid;grid-template-columns:1fr 320px;gap:18px}
-    ul{margin:8px 0 0;padding-left:18px;color:var(--muted)}
-    .meta{font-size:13px;color:var(--muted)}
-    .skill-grid{display:flex;flex-wrap:wrap;gap:8px}
-    .skill{padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.02);font-size:13px}
-    footer{margin-top:24px;text-align:center;color:var(--muted);font-size:13px}
-    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:var(--accent);color:white;text-decoration:none}
-    @media (max-width:880px){.two-col{grid-template-columns:1fr} .avatar{width:90px;height:90px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdul Muneeb | Digital & ASIC Design Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* Reset & fonts */
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; transition: background 0.3s, color 0.3s; }
+body { background: #f5f7fa; color: #333; line-height:1.6; }
+
+/* Dark mode */
+body.dark { background: #1f2028; color: #ddd; }
+body.dark header, body.dark footer { background: #0a74da; color: white; }
+
+/* Header */
+header { background: #0a74da; color:white; padding:40px 20px; text-align:center; position:relative; }
+header img { width:150px; height:150px; border-radius:50%; border:4px solid white; margin-bottom:20px; }
+header h1 { font-size:2.5rem; margin-bottom:10px; }
+header h3 { font-weight:400; margin-bottom:10px; }
+nav a { color:#fff; text-decoration:none; margin:0 10px; font-weight:500; transition:0.3s; }
+nav a:hover { text-decoration:underline; }
+
+/* Dark mode toggle */
+#themeToggle { position:absolute; top:20px; right:20px; cursor:pointer; font-size:1.5rem; color:white; }
+
+/* Section styling */
+section { padding:60px 20px; max-width:1000px; margin:auto; }
+h2 { color:#0a74da; margin-bottom:20px; border-bottom:2px solid #0a74da; display:inline-block; padding-bottom:5px; }
+body.dark h2 { border-color:#ffb400; color:#ffb400; }
+
+/* Cards */
+.card { background:white; border-radius:10px; padding:20px; margin-bottom:20px; box-shadow:0 4px 10px rgba(0,0,0,0.1); transition:0.3s; }
+.card:hover { transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.2); }
+body.dark .card { background:#2b2c38; box-shadow:0 4px 10px rgba(0,0,0,0.3); }
+
+/* Flex layouts */
+.flex { display:flex; flex-wrap:wrap; gap:20px; }
+.flex .half { flex:1; min-width:250px; }
+
+/* Skills bars */
+.skill { margin-bottom:10px; }
+.skill-name { font-weight:500; display:flex; align-items:center; gap:8px; }
+.skill-bar { background:#ddd; border-radius:5px; overflow:hidden; margin-top:5px; }
+.skill-bar-inner { height:10px; background:#0a74da; width:0; }
+body.dark .skill-bar { background:#444; }
+body.dark .skill-bar-inner { background:#ffb400; }
+
+/* Timeline */
+.timeline { position: relative; max-width: 900px; margin: 40px auto; }
+.timeline::after { content:''; position:absolute; width:4px; background:#0a74da; top:0; bottom:0; left:50%; margin-left:-2px; }
+body.dark .timeline::after { background:#ffb400; }
+.timeline-item { padding:20px 40px; position:relative; width:50%; }
+.timeline-item.left { left:0; }
+.timeline-item.right { left:50%; }
+.timeline-item::after { content:''; position:absolute; width:20px; height:20px; background:#0a74da; border-radius:50%; top:20px; right:-10px; z-index:1; }
+.timeline-item.right::after { left:-10px; right:auto; }
+body.dark .timeline-item::after { background:#ffb400; }
+.timeline-content { padding:20px; background:#fff; position:relative; border-radius:6px; box-shadow:0 4px 10px rgba(0,0,0,0.1); opacity:0; }
+body.dark .timeline-content { background:#2b2c38; box-shadow:0 4px 10px rgba(0,0,0,0.3); }
+.timeline-item.left .timeline-content { animation: slideInLeft 1s ease forwards; }
+.timeline-item.right .timeline-content { animation: slideInRight 1s ease forwards; }
+@keyframes slideInLeft { 0%{transform:translateX(-50px); opacity:0;} 100%{transform:translateX(0); opacity:1;} }
+@keyframes slideInRight { 0%{transform:translateX(50px); opacity:0;} 100%{transform:translateX(0); opacity:1;} }
+
+/* Footer */
+footer { text-align:center; padding:20px; background:#0a74da; color:white; }
+
+/* Animations */
+.fade-in { opacity:0; transform:translateY(20px); transition:opacity 1s ease-out, transform 1s ease-out; }
+.fade-in.visible { opacity:1; transform:translateY(0); }
+
+/* Back to top button */
+#backTop { position:fixed; bottom:30px; right:30px; background:#0a74da; color:white; border:none; border-radius:50%; width:50px; height:50px; font-size:1.5rem; cursor:pointer; display:none; z-index:100; }
+body.dark #backTop { background:#ffb400; color:#1f2028; }
+
+</style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="avatar">AM</div>
-      <div>
-        <h1>Abdul Muneeb</h1>
-        <div class="meta">M.Sc. EECS (York University) — Researcher in Neuromorphic Systems & Epilepsy Detection</div>
-        <p class="lead">Designing spiking neural network processors and EEG-based seizure detection systems. Interested in hardware acceleration, embedded systems, and applied machine learning for healthcare.</p>
-        <nav>
-          <a href="#about">About</a>
-          <a href="#experience">Experience</a>
-          <a href="#education">Education</a>
-          <a href="#publications">Publications</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
-    </header>
 
-    <section id="about">
-      <h2>01 — About Me</h2>
-      <p>I am Abdul Muneeb, a Masters student in Electrical and Computer Engineering at York University focused on spiking neural networks (SNNs) for EEG-based seizure detection and neuromorphic processors. My research combines algorithm design with hardware implementation and embedded systems to create low‑power real‑time seizure detection solutions.</p>
-    </section>
+<header>
+    <i id="themeToggle" class="fa-solid fa-moon"></i>
+    <img src="profile.jpg" alt="Abdul Muneeb">
+    <h1>Abdul Muneeb</h1>
+    <h3>Digital & ASIC Design Engineer | Neuromorphic Systems</h3>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-    <div class="two-col">
-      <main>
-        <section id="experience">
-          <h2>02 — Experience</h2>
-          <ul>
-            <li>
-              <strong>Research Assistant</strong> — IC Design Lab, Lahore University of Management Sciences (Apr 2021 – Sep 2022)
-              <div class="meta">Worked on hardware implementations and verification for neuromorphic designs and SNN accelerators.</div>
-            </li>
-            <li>
-              <strong>Associate Design Engineer</strong> — Lampro Mellon (2019–2021)
-              <div class="meta">SoC design and verification work across RTL and testbench development.</div>
-            </li>
-            <li>
-              <strong>Instructor</strong> — (Current) — Teaching assistant & lab instructor at York University; creating midterms and labs for digital design and embedded systems.
-            </li>
-          </ul>
-        </section>
+<section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <p>Experienced ASIC Design Engineer with strong RTL, verification, and synthesis expertise. Passionate about high-performance digital and neuromorphic systems.</p>
+</section>
 
-        <section id="education">
-          <h2>03 — Education</h2>
-          <ul>
-            <li><strong>M.A.Sc. — Electrical & Computer Engineering</strong>, York University — (In progress)</li>
-            <li><strong>B.Sc. — Electronic Engineering</strong>, The Islamia University of Bahawalpur — 2019</li>
-          </ul>
-        </section>
-
-        <section id="publications">
-          <h2>04 — Selected Publications</h2>
-          <ul>
-            <li>Research on EEG seizure detection & SNN-based neuromorphic processors — (Thesis & conference submissions)</li>
-            <li>Additional publications available on request or via my profile.</li>
-          </ul>
-        </section>
-
-        <section id="skills">
-          <h2>05 — Skills</h2>
-          <div class="skill-grid">
-            <span class="skill">Verilog / SystemVerilog</span>
-            <span class="skill">Spiking Neural Networks (SNN)</span>
-            <span class="skill">Neuromorphic Processors</span>
-            <span class="skill">EEG Signal Processing</span>
-            <span class="skill">Python / MATLAB</span>
-            <span class="skill">Vivado / AXI-4</span>
-            <span class="skill">Embedded Systems (ESP32)</span>
-            <span class="skill">SHA256 Hardware Accelerator</span>
-          </div>
-        </section>
-
-      </main>
-
-      <aside>
-        <section>
-          <h2>Quick Info</h2>
-          <p class="meta">Location: Toronto, Canada</p>
-          <p class="meta">Email: muneeb.iub@gmail.com</p>
-          <p class="meta">LinkedIn: Abdul Muneeb.in</p>
-          <p class="meta">Phone: (+1) 416-617-1578</p>
-          <p style="margin-top:12px;"><a class="btn" href="#contact">Contact Me</a></p>
-        </section>
-
-        <section style="margin-top:14px;">
-          <h2>Notable</h2>
-          <ul>
-            <li>Thesis nominated for best thesis award</li>
-            <li>Winner: Most Interesting Research — Industrial Night YorkU</li>
-            <li>Experience building mobile apps and hardware accelerators</li>
-          </ul>
-        </section>
-
-      </aside>
+<!-- Experience Timeline -->
+<section id="experience" class="fade-in">
+    <h2>Experience</h2>
+    <div class="timeline">
+        <div class="timeline-item left">
+            <div class="timeline-content card">
+                <h3>Senior ASIC Design Engineer</h3>
+                <h4>Nokia | Mar 2025 – Present | Ottawa, Canada</h4>
+                <ul>
+                    <li>Designed low-power DSP components for optical network ASICs.</li>
+                    <li>Performed RTL development and synthesis for power-efficient solutions.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-item right">
+            <div class="timeline-content card">
+                <h3>Digital Design Engineer</h3>
+                <h4>Neuro-IC Lab, York University | Sep 2022 – Mar 2024 | Toronto, Canada</h4>
+                <ul>
+                    <li>Developed RTL designs for energy-efficient digital processing.</li>
+                    <li>Functional verification, timing closure, pre/post layout validation.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-item left">
+            <div class="timeline-content card">
+                <h3>Digital Design Engineer</h3>
+                <h4>IC Design Lab, LUMS | Apr 2021 – Sep 2022 | Lahore, Pakistan</h4>
+                <ul>
+                    <li>Designed and verified ASIC IPs for biomedical applications.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="timeline-item right">
+            <div class="timeline-content card">
+                <h3>Associate Design Engineer</h3>
+                <h4>Lampro Mellon | Oct 2019 – May 2021 | Lahore, Pakistan</h4>
+                <ul>
+                    <li>Designed RTL modules for multi-clock domain digital systems.</li>
+                </ul>
+            </div>
+        </div>
     </div>
+</section>
 
-    <section id="contact">
-      <h2>06 — Contact</h2>
-      <p>If you'd like the source (single HTML file), screenshots, or a GitHub-ready repo, tell me which format you prefer and I'll provide it.</p>
-    </section>
-
-    <footer>
-      © <span id="year"></span> Abdul Muneeb — Built with ❤️
-    </footer>
-  </div>
-  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
-</body>
-</html>
+<!-- Education Timeline -->
+<section id="education" class="fade-in">
+    <h2>Education</h2>
+    <div class="timeline">
+        <div class="timeline-item left">
+            <div class="timeline-content card">
+                <h3>M.A.Sc. Electrical & Computer Engineering</h3>
+                <h4>York University | Sep 2022 – Dec 2024</h4>
+                <p>Thesis: Energy-efficiency-optimized convolutional
